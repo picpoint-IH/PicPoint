@@ -1,3 +1,53 @@
-.img-index img{
-    width: 500px;
+
+a {
+  color: #00b7ff;
+}
+
+.pepinillo {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url('/images/background2.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.botonera{
+    margin: 200px 300px 0px 0px;
+    position: absolute;
+    width:400px;
+}
+.btn{
+    width: 200px;
+}
+p {
+    color: white
+}
+
+h3{
+color: white
+}
+#box {
+  /* width: 400px; */
+  height: 600px;
+  margin: 3% 3% 0 30%;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  box-shadow:  8px 1px 5px 5px rgb(0, 6, 20);
+  /* 0 0 20px 90px #0ff */
+}
+
+#box img {
+  height: 100%;
+  animation: spin 35s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    margin-left: -400px;
+  }
+  100% {
+    margin-left: 0px;
+  }
 }
