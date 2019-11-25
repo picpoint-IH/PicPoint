@@ -2,8 +2,8 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User.models");
-const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
-
+const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+const uploadCloud = require('../configs/cloudinary.js');
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -21,44 +21,16 @@ router.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
-router.get("/signup", (req, res) => {
-  let data ={
-    layout: false
-  }
-  res.render("auth/signup", data);
+router.get("/signup", ensureLoggedOut(), (req, res) => {
+  res.render("auth/signup", { layout: false, message: req.flash('error') });
 });
 
-router.post("/signup", (req, res, next) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
-    return;
-  }
 
-  User.findOne({ username }, "username", (err, user) => {
-    if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
-      return;
-    }
-
-    const salt = bcrypt.genSaltSync(bcryptSalt);
-    const hashPass = bcrypt.hashSync(password, salt);
-
-    const newUser = new User({
-      username,
-      password: hashPass
-    });
-
-    newUser.save()
-    .then(() => {
-      res.redirect("/");
-    })
-    .catch(err => {
-      res.render("auth/signup", { message: "Something went wrong" });
-    })
-  });
-});
+router.post('/signup', [ensureLoggedOut(), uploadCloud.single('imgFile')], passport.authenticate('local-signup', {
+  successRedirect: '/',
+  failureRedirect: '/signup',
+  failureFlash: true
+}))
 
 router.get("/logout", (req, res) => {
   req.logout();
@@ -75,11 +47,11 @@ router.get('/edit', (req, res, next) => {
   res.render('authentication/upload')
 });
 
-router.post('/edit',/* uploadCloud.single('imgFile'),*/ (req, res, next) => {
+router.post('/edit', uploadCloud.single('imgFile'), (req, res, next) => {
   const path = req.file.url
   User.findByIdAndUpdate(req.user._id, {
-      path
-    })
+    path
+  })
     .then(us => res.redirect('/'))
     .catch(error => console.log(error))
 });
