@@ -11,6 +11,11 @@ a {
   background-size: cover;
 }
 
+#map {
+ height: 100%;
+ width: 100%;
+ padding:276px;
+}
 .botonera{
     margin: 200px 300px 0px 0px;
     position: absolute;
