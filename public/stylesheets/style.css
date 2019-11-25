@@ -1,7 +1,11 @@
 a {
   color: #00b7ff;
 }
-
+.mainBody{
+  background: url("/images/back.jpg") no-repeat center center fixed;
+  height: 500px;
+  width: 100%;
+}
 .pepinillo {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: url('/images/background2.jpg') no-repeat center center fixed; 
@@ -11,11 +15,16 @@ a {
   background-size: cover;
 }
 
+.samples img {
+  width: 250px;
+  height:200px;
+}
+
 #map {
  height: 100%;
  width: 100%;
- padding:276px;
 }
+
 .botonera{
     margin: 200px 300px 0px 0px;
     position: absolute;
