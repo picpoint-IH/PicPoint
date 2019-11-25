@@ -45,11 +45,11 @@ app.use(session({
 }))
 
 app.use(flash());
-require('./passport')(app);
+require('./passport')(app)
     
-app.use('/', require('./routes/index.routes'));
-
-app.use('/auth', require('./routes/auth.routes'));
+app.use('/', require('./routes/index.routes'))
+app.use('/auth', require('./routes/auth.routes'))
+app.use('/post', require('./routes/post.routes'))
       
 
 module.exports = app;
