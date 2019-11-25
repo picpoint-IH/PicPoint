@@ -5,16 +5,11 @@ const User = require("../models/User.models");
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 const uploadCloud = require('../configs/cloudinary.js');
 
-// Bcrypt to encrypt passwords
-const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
-
-
 router.get("/login", (req, res) => {
   res.render("auth/login", { "message": req.flash("error"), layout: false });
 });
 
-router.post("/login", passport.authenticate("local", {
+router.post("/login", passport.authenticate("local-login", {
   successRedirect: "/",
   failureRedirect: "/auth/login",
   failureFlash: true,
@@ -28,7 +23,7 @@ router.get("/signup", ensureLoggedOut(), (req, res) => {
 
 router.post('/signup', [ensureLoggedOut(), uploadCloud.single('imgFile')], passport.authenticate('local-signup', {
   successRedirect: '/',
-  failureRedirect: '/signup',
+  failureRedirect: '/auth/signup',
   failureFlash: true
 }))
 

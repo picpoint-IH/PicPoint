@@ -3,9 +3,9 @@ const LocalStrategy = require('passport-local').Strategy;
 const User          = require('../models/User.models');
 const bcrypt        = require('bcrypt');
 
-passport.use('local-login', new LocalStrategy((username, password, next) => {
+passport.use('local-login', new LocalStrategy((email, password, next) => {
   User.findOne({
-    username
+    email
   }, (err, user) => {
     if (err) {
       return next(err);
@@ -20,7 +20,6 @@ passport.use('local-login', new LocalStrategy((username, password, next) => {
         message: "Incorrect password"
       });
     }
-
     return next(null, user);
   });
 }));
