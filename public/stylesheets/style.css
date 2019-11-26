@@ -51,6 +51,14 @@ color: white
   /* 0 0 20px 90px #0ff */
 }
 
+.account-message {
+  color:black;
+}
+
+.profile-post img {
+  width: 250px;
+}
+
 #box img {
   height: 100%;
   animation: spin 35s linear infinite;
