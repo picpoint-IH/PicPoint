@@ -1,31 +1,37 @@
 <div class="container">
     <div class="row">
-        {{#with user}}
-        <div class="col-md-2">
-            <h1>Profile</h1>
+        <div class="col-2">
+            <h1 style="font-weight: 100">Profile</h1>
             <hr>
+        </div>
+        <div class="col-10">
+            <h1><br></h1>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="row">
+        {{#with user}}
+        <div class="col-2">
             <img src="{{this.path}}" alt="" style="width: 100%">
-            <h4>{{this.username}} {{this.userLastname}}</h4>
+            <h4>{{this.username}}</h4>
             <h4>About me</h4>
             <p>{{this.aboutMe}}</p>
         </div>
         {{/with}}
-        <div class="col-md-10 profile-post">
-            <h1>My Posts</h1>
+        <div class="col-10 profile-post">
             {{#each post}}
-            <hr>
-            <h4>{{this.picName}}</h4>
             <img src="{{this.picPath}}" alt="">
             {{/each}}
         </div>
-        <div class="col-md-12">
-            <h1>Locations</h1>
-            <hr>
-            <figure id="map"></figure>
-            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-            <script src="/javascripts/script.js"></script>
-            <script
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
-        </div>
+    </div>
+    <div class="row">
+        <h1>Locations</h1>
+        <hr>
+        <figure id="map"></figure>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/javascripts/script.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
     </div>
 </div>

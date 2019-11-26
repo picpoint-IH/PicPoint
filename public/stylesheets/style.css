@@ -77,7 +77,18 @@ color: white
   color: black;
 }
 
+.profile-post{
+  overflow:scroll;
+  height:250px;
+}
+
 .profile-post img {
-  
-  width: 250px;
+  width: 200px;
+  margin: 5px;
+}
+
+.main-posts{
+  overflow:scroll;
+  height:410px;
+  margin: 0px;
 }

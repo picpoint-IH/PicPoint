@@ -15,7 +15,6 @@ function postspoint(post, myMap) {
       map: myMap,
       title: elm.content
     });
-
   })
 }
 
