@@ -10,7 +10,7 @@
             <p>{{this.aboutMe}}</p>
         </div>
         {{/with}}
-        <div class="col-md-6 profile-post">
+        <div class="col-md-10 profile-post">
             <h1>My Posts</h1>
             {{#each post}}
             <hr>
@@ -18,8 +18,8 @@
             <img src="{{this.picPath}}" alt="">
             {{/each}}
         </div>
-        <div class="col-md-4">
-            <h1>Ubication</h1>
+        <div class="col-md-12">
+            <h1>Locations</h1>
             <hr>
             <figure id="map"></figure>
             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
