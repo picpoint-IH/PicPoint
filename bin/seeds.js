@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
 const Picture = require('../models/Post.models')
+require('dotenv').config()
 
 const dbtitle = 'PicPoint'
-mongoose.connect(`mongodb://localhost/${dbtitle}`, { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect(`${process.env.DB}`, { useUnifiedTopology: true, useNewUrlParser: true })
 
 Picture.collection.drop()
 

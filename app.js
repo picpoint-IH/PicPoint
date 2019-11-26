@@ -1,16 +1,16 @@
 require('dotenv').config();
 
-const express      = require('express');
-const hbs          = require('hbs');
+const express = require('express');
+const hbs = require('hbs');
 const mongoose = require('mongoose');
-const session    = require("express-session");
+const session = require("express-session");
 const MongoStore = require('connect-mongo')(session);
-const flash      = require("connect-flash");
+const flash = require("connect-flash");
 
 const app = express();
 
 mongoose
-  .connect('mongodb://localhost/PicPoint', {
+  .connect(`${process.env.DB}`, {
     useNewUrlParser: true, useUnifiedTopology: true
   })
   .then(x => {
@@ -28,11 +28,11 @@ require('./configs/debug.config')
 
 hbs.registerHelper('ifUndefined', (value, options) => {
   if (arguments.length < 2)
-      throw new Error("Handlebars Helper ifUndefined needs 1 parameter");
-  if (typeof value !== undefined ) {
-      return options.inverse(this);
+    throw new Error("Handlebars Helper ifUndefined needs 1 parameter");
+  if (typeof value !== undefined) {
+    return options.inverse(this);
   } else {
-      return options.fn(this);
+    return options.fn(this);
   }
 });
 
@@ -41,15 +41,15 @@ app.use(session({
   secret: 'irongenerator',
   resave: true,
   saveUninitialized: true,
-  store: new MongoStore( { mongooseConnection: mongoose.connection })
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
 
 app.use(flash());
 require('./passport')(app)
-    
+
 app.use('/', require('./routes/index.routes'))
 app.use('/auth', require('./routes/auth.routes'))
 app.use('/post', require('./routes/post.routes'))
-      
+
 
 module.exports = app;

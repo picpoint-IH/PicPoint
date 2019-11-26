@@ -1,5 +1,5 @@
 function getAllplacesFromTheAPI(myMap) {
-  axios.get("/auth/api")
+  axios.get("https://picpointapp.herokuapp.com/auth/api")
     .then(response => postspoint(response.data.post, myMap))
     .catch(error => console.log(error))
 }
