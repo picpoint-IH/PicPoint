@@ -10,11 +10,7 @@ const flash = require("connect-flash");
 const app = express();
 
 mongoose
-<<<<<<< HEAD
-  .connect(process.env.DB, {
-=======
   .connect(`mongodb:${process.env.DB}`, {
->>>>>>> 89b9e07ac0836c652173a4a3a28674ee1357e6bd
     useNewUrlParser: true, useUnifiedTopology: true
   })
   .then(x => {
