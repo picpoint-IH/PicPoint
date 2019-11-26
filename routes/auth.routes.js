@@ -2,10 +2,8 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User.models");
-const {
-  ensureLoggedIn,
-  ensureLoggedOut
-} = require('connect-ensure-login');
+const Post = require("../models/Post.models")
+const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
 const uploadCloud = require('../configs/cloudinary.js');
 
 router.get("/login", (req, res) => {
@@ -41,9 +39,11 @@ router.get("/logout", ensureLoggedIn('/auth/login'), (req, res) => {
 });
 
 router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
-  res.render('auth/profile', {
-    user: req.user
-  });
+  Post.find({creatorId: req.user._id})
+  .populate('creatorId')
+  .then(allPosts => res.render('auth/profile', {
+    user: req.user, post: allPosts
+  }));
 });
 
 router.get('/edit', (req, res, next) => {
@@ -57,6 +57,15 @@ router.post('/edit', uploadCloud.single('imgFile'), (req, res, next) => {
     })
     .then(us => res.redirect('/'))
     .catch(error => console.log(error))
+});
+
+router.get('/api', (req, res, next) => {
+  Post.find({creatorId: req.user._id})
+    .populate('creatorId')
+    .then(placesFromDB => res.status(200).json({
+      post: placesFromDB
+    }))
+    .catch(err => next(err))
 });
 
 module.exports = router;

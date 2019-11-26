@@ -68,3 +68,8 @@ color: white
 .account-message{
   color: black;
 }
+
+.profile-post img {
+  
+  width: 250px;
+}

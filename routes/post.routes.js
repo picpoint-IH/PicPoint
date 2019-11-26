@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-//const User = require('../models/user')
+const User = require('../models/User.models')
 const Post = require('../models/Post.models')
-//const multer = require('multer')
-//const uploadCloud = require('../configs/cloudinary.config');
+const multer = require('multer')
+const uploadCloud = require('../configs/cloudinary');
 const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
 
 // Lista de Posts
@@ -25,9 +25,12 @@ router.get('/new', ensureLoggedIn('/post'), (req, res) => {
 })
 
 // Nuevo Post enviar formulario
-router.post('/new', /*uploadCloud.single('picPath'),*/ (req, res) => {
+router.post('/new', uploadCloud.single('picPath'), (req, res) => {
     const picPath = req.file.url
-    //const picName = req.file.originalname
+    let location = {
+        type: 'Point',
+        coordinates: [req.body.latitude, req.body.longitude]
+    }
     const {
         content,
         picName
@@ -37,9 +40,10 @@ router.post('/new', /*uploadCloud.single('picPath'),*/ (req, res) => {
             content,
             creatorId: req.user._id,
             picPath,
-            picName
+            picName,
+            location
         })
-        .then(x => res.redirect('/post'))
+        .then(x => res.redirect('/auth/profile'))
         .catch(err => 'error: ' + err)
 })
 
