@@ -32,12 +32,10 @@ router.post('/new', uploadCloud.single('picPath'), (req, res) => {
         coordinates: [req.body.latitude, req.body.longitude]
     }
     const {
-        content,
         picName
     } = req.body
 
     Post.create({
-            content,
             creatorId: req.user._id,
             picPath,
             picName,

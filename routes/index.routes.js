@@ -16,4 +16,15 @@ router.get('/main', (req, res) => {
   res.render('main')
 })
 
+router.get('/api', (req, res, next) => {
+  Post.find()
+    .populate('creatorId')
+    .then(placesFromDB => res.status(200).json({
+      post: placesFromDB
+    }))
+    .catch(err => next(err))
+});
+
+module.exports = router;
+
 module.exports = router;
