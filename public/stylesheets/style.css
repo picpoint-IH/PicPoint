@@ -47,10 +47,6 @@ a {
   color:black;
 }
 
-.profile-post img {
-  width: 250px;
-}
-
 #box img {
   height: 100%;
   animation: spin 35s linear infinite;
@@ -69,18 +65,23 @@ a {
   color: black;
 }
 
-.profile-post{
-  overflow:scroll;
-  height:250px;
+.profile-post {
+  overflow: scroll;
+  height: 400px;
 }
 
 .profile-post img {
   width: 200px;
   margin: 5px;
 }
+.main-post {
+  overflow: scroll;
+  height: 300px;
+}
 
-.main-posts{
-  overflow:scroll;
-  height:410px;
-  margin: 0px;
+.main-post img {
+  margin: 5px;
+  width: 250px;
+  height: 200px;
+  object-fit: contain
 }
