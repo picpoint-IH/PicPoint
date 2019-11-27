@@ -10,28 +10,18 @@ router.get('/', (req, res, next) => {
   res.render('index', data)
 });
 
+let auxPost
+
 router.get('/main', (req, res) => {
   Post.find()
-    .populate('creatorId')
-    .then(allPosts => res.render('main', {
-      post: allPosts
-    }))
+    .then(allPosts =>{
+    auxPost = allPosts
+    res.render('main', {post: auxPost})
+  })
     .catch(err => next(err))
 })
-router.get('/main2', (req, res) => {
-  Post.find()
-    .populate('creatorId')
-    .then(allPosts => res.render('main2', {
-      post: allPosts
-    }));
-})
-router.get('/api', (req, res, next) => {
-  Post.find()
-    .populate()
-    .then(placesFromDB => res.status(200).json({
-      post: placesFromDB
-    }))
-    .catch(err => next(err))
+
+router.get('/api', (req, res, next) => {res.status(200).json({post: auxPost})
 });
 
 module.exports = router;
