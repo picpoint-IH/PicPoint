@@ -6,23 +6,27 @@ a {
   height: 500px;
   width: 100%;
 }
-.mainMap {
+.worldMap {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: url('/images/111.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
+.orange{
+  color:rgb(235, 140, 51)
+}
 .samples img {
   width: 400px;
   height:300px;
 }
 
 #map {
+/* margin-top: 10px; */
  height: 400px;
- width: 1110px;
+ width: 60vw;
+margin:auto;
 }
 
 .botonera{
@@ -40,7 +44,7 @@ a {
   border-radius: 50%;
   overflow: hidden;
   text-align: center;
-  box-shadow:  8px 1px 20px 1px rgb(55, 171, 224);
+  box-shadow:  5px 5px 50px 5px rgb(235, 140, 51);
 }
 
 .account-message {
@@ -67,7 +71,7 @@ a {
 
 .profile-post {
   overflow: scroll;
-  height: 400px;
+  height: 420px;
 }
 
 .profile-post img {
@@ -76,7 +80,7 @@ a {
 }
 .main-post {
   overflow: scroll;
-  height: 300px;
+  height: 420px;
 }
 
 .main-post img {
@@ -86,3 +90,6 @@ a {
   object-fit: contain
 }
 
+.colorBackground {
+  background: url('/images/white.jpg') no-repeat center center fixed;
+}
