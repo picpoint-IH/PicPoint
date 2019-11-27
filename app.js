@@ -50,6 +50,7 @@ require('./passport')(app)
 app.use('/', require('./routes/index.routes'))
 app.use('/auth', require('./routes/auth.routes'))
 app.use('/post', require('./routes/post.routes'))
+app.use('/search', require('./routes/search.routes'))
 
 
 module.exports = app;

@@ -15,7 +15,8 @@ router.get('/main', (req, res) => {
     .populate('creatorId')
     .then(allPosts => res.render('main', {
       post: allPosts
-    }));
+    }))
+    .catch(err => next(err))
 })
 router.get('/main2', (req, res) => {
   Post.find()
@@ -32,7 +33,5 @@ router.get('/api', (req, res, next) => {
     }))
     .catch(err => next(err))
 });
-
-module.exports = router;
 
 module.exports = router;
