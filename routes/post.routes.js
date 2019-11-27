@@ -6,18 +6,8 @@ const multer = require('multer')
 const uploadCloud = require('../configs/cloudinary');
 const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
 
-// Lista de Posts
-router.get('/', (req, res) => {
-    Post.find()
-        .populate('creatorId')
-        .then(allPosts => res.render('post/posts-index', {
-            posts: allPosts
-        }))
-        .catch(err => console.log("Error consultando la BBDD: ", err))
-});
-
 // Nuevo Post: renderizar formulario
-router.get('/new', ensureLoggedIn('/post'), (req, res) => {
+router.get('/new', ensureLoggedIn('/auth/login'), (req, res) => {
     Post.find()
         .then(thePost => res.render('post/newPost', {
             post: thePost
@@ -48,5 +38,18 @@ router.post('/new', uploadCloud.single('picPath'), (req, res) => {
         .catch(err => 'error: ' + err)
 })
 
+let post
+
+router.get('/details/:id', (req, res) => {
+    Post.findById(req.params.id)
+        .then(thePost => {
+            post = thePost
+            res.render('Post/detailPost', {post})
+    })
+        .catch(err => console.log("Error consultando la BBDD", err))
+})
+
+router.get('/api', (req, res, next) => {res.status(200).json({post: post})
+});
 
 module.exports = router;
