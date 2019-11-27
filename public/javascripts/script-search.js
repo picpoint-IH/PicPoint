@@ -13,7 +13,7 @@ function postspoint(post, myMap) {
     new google.maps.Marker({
       position: center,
       map: myMap,
-      title: elm.content
+      title: elm.picName
     });
   })
 }

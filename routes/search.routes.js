@@ -6,17 +6,19 @@ router.get('/', (req, res, next) => {
     res.render('search')
 });
 
-router.post('/', (req, res) => {
-    let search = req.body.search
-    Post.find({ 'country': search })
-        .then(post => {
-            console.log(post)
-            res.render('search', { post: post })
-        })
+let auxPost
 
-        .catch(err => console.log(err))
+router.post('/', (req, res) => {
+let search = req.body.search
+Post.find({$or: [{'country': search}, {'provice': search}, {'city': search}]})
+.then(post => {
+    auxPost = post
+    res.render('search', {post: post})
+})
+.catch(err => console.log(err))
 })
 
-
+router.get('/api', (req, res, next) => {res.status(200).json({post: auxPost})
+});
 
 module.exports = router;

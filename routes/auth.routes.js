@@ -38,12 +38,15 @@ router.get("/logout", ensureLoggedIn('/auth/login'), (req, res) => {
   res.redirect("/");
 });
 
+let auxPost
+
 router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
   Post.find({creatorId: req.user._id})
-  .populate('creatorId')
-  .then(allPosts => res.render('auth/profile', {
-    user: req.user, post: allPosts
-  }));
+  .then(allPosts => {
+    auxPost = allPosts
+    res.render('auth/profile', {
+    user: req.user, post: auxPost})
+});
 });
 
 router.get('/edit', (req, res, next) => {
@@ -59,13 +62,6 @@ router.post('/edit', uploadCloud.single('imgFile'), (req, res, next) => {
     .catch(error => console.log(error))
 });
 
-router.get('/api', (req, res, next) => {
-  Post.find({creatorId: req.user._id})
-    .populate('creatorId')
-    .then(placesFromDB => res.status(200).json({
-      post: placesFromDB
-    }))
-    .catch(err => next(err))
-});
+router.get('/api', (req, res, next) => {res.status(200).json({post: auxPost})});
 
 module.exports = router;
