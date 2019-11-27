@@ -32,14 +32,17 @@ router.post('/new', uploadCloud.single('picPath'), (req, res) => {
         coordinates: [req.body.latitude, req.body.longitude]
     }
     const {
-        picName
+        picName, country, province, city
     } = req.body
 
     Post.create({
             creatorId: req.user._id,
             picPath,
             picName,
-            location
+            location,
+            country,
+            province,
+            city
         })
         .then(x => res.redirect('/auth/profile'))
         .catch(err => 'error: ' + err)

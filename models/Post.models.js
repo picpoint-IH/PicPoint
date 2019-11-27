@@ -6,6 +6,9 @@ const postSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
+    country: String,
+    city: String,
+    province: String,
     picPath: String,
     picName: String,
     location: { type: { type: String }, coordinates: [Number] }

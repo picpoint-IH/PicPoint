@@ -1,0 +1,19 @@
+<div class="container">
+
+<h1 style="font-weight: 100">Main</h1>
+    <hr>
+    <div class="row justify-content-between">
+        <div class="col-12 main-post">
+            {{#each post}}
+            <img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt="">
+            {{/each}}
+        </div>
+    </div>
+    <div class="row ">
+        <figure id="map"></figure>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/javascripts/script-search.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+    </div>
+</div>

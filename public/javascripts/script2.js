@@ -2,6 +2,7 @@ var marker;
 var coords = {};
 
 initMap = function () {
+    initialize()
     navigator.geolocation.getCurrentPosition(
         function (position) {
             coords = {
@@ -32,8 +33,27 @@ function setMapa(coords) {
     marker.addListener('click', toggleBounce);
     marker.addListener('dragend', function (event) {
         document.getElementById("lat").value = this.getPosition().lat()
-        document.getElementById("lng").value = this.getPosition().lng();
+        document.getElementById("lng").value = this.getPosition().lng()
+
+        let latlng = new google.maps.LatLng(this.getPosition().lat(), this.getPosition().lng());
+        //console.log(geocoder)
+        geocoder.geocode({
+            'latLng': latlng
+        }, function (results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+                if (results) {
+                    document.getElementById("country").value = results[results.length - 1].address_components[0].long_name
+                    document.getElementById("province").value = results[results.length - 2].address_components[0].long_name
+                    document.getElementById("city").value = results[results.length - 3].address_components[0].long_name
+                } else {
+                    alert('No results found');
+                }
+            } else {
+                alert('Geocoder failed due to: ' + status);
+            }
+        });
     });
+
 }
 
 function toggleBounce() {
@@ -42,4 +62,10 @@ function toggleBounce() {
     } else {
         marker.setAnimation(google.maps.Animation.BOUNCE);
     }
+}
+
+let geocoder;
+
+function initialize() {
+    geocoder = new google.maps.Geocoder();
 }
