@@ -6,9 +6,9 @@ a {
   height: 500px;
   width: 100%;
 }
-.pepinillo {
+.mainMap {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: url('/images/background2.jpg') no-repeat center center fixed; 
+  background: url('/images/111.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,29 +26,21 @@ a {
 }
 
 .botonera{
-    margin: 200px 300px 0px 0px;
+    margin: 200px 0px 0px 0px;
     position: absolute;
     width:400px;
 }
 .btn{
     width: 200px;
 }
-p {
-    color: white
-}
 
-h3{
-color: white
-}
 #box {
-  /* width: 400px; */
-  height: 600px;
+  height: 700px;
   margin: 3% 3% 0 30%;
   border-radius: 50%;
   overflow: hidden;
   text-align: center;
-  box-shadow:  8px 1px 5px 5px rgb(0, 6, 20);
-  /* 0 0 20px 90px #0ff */
+  box-shadow:  8px 1px 20px 1px rgb(55, 171, 224);
 }
 
 .account-message {
