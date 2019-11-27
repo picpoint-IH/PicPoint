@@ -1,19 +1,25 @@
-<div class="container">
+<body class="colorBackground">
 
-    <hr>
-    <div class="row justify-content-between">
-        <div class="col-12 main-post">
+    <div class="container">
+        <hr>
+        <div class="row  main-post justify-content-center ">
             {{#each post}}
-            <img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt="">
+            <div class="col-3 ">
+                <img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt="">
+            </div>
             {{/each}}
+
         </div>
+        <div class="row justify-content-center ">
+            <div>
+                <figure id="map"></figure>
+                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                <script src="/javascripts/script-main.js"></script>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+            </div>
+        </div>
+
     </div>
-    <hr>
-    <div class="row ">
-        <figure id="map"></figure>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="/javascripts/script-main.js"></script>
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
-    </div>
-</div>
+
+</body>

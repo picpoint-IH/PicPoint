@@ -15,13 +15,7 @@ body {
 }
 
 
-// .shadow {
-//   width: 550px;
-//   height: 550.5;
-//   // position: absolute;
-//   border-radius: 50%;
-//   box-shadow: inset -5px, 0px, 30px, 5px;
-// }
+
 
 #box {
   width: 550px;
@@ -30,7 +24,7 @@ body {
   border-radius: 50%;
   overflow: hidden;
   text-align: center;
-  box-shadow:  5px 1px 5px 5px rgb(0, 6, 20);
+  box-shadow:  500px 1px 5px 5px rgb(0, 6, 20);
 }
 
 #box img {

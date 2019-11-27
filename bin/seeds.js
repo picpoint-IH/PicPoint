@@ -12,7 +12,7 @@ const pictures = [
   {
     location: { coordinates: [134.79511304375, 34.36120948789266], type: "Point" },
     picPath: "/images/Awaji.jpg",
-    picName: "Awaji",
+    picName: "Awaji Arc",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "Japan",
     province: "Hyogo",
@@ -21,7 +21,7 @@ const pictures = [
   {
     location: { coordinates: [-71.06121089843748, 42.3795258308998], type: "Point" },
     picPath: "/images/boston.jpeg",
-    picName: "Boston",
+    picName: "Boston Street",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "USA",
     province: "Massachusetts",
@@ -49,7 +49,7 @@ const pictures = [
   {
     location: { coordinates: [-104.87643632167965, 38.26264828874974], type: "Point" },
     picPath: "/images/colorado.jpeg",
-    picName: "Colorado",
+    picName: "Colorado Canyon",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "USA",
     province: "Colorado",
@@ -58,7 +58,7 @@ const pictures = [
   {
     location: { coordinates: [135.78386387499995, 34.55594705439137], type: "Point" },
     picPath: "/images/kyoto.jpeg",
-    picName: "Kyoto",
+    picName: "Kyoto Views",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "Japan",
     province: "Kyoto",
@@ -67,7 +67,7 @@ const pictures = [
   {
     location: { coordinates: [19.416676374999952, -31.095681937957718], type: "Point" },
     picPath: "/images/lavander.jpg",
-    picName: "Lavander",
+    picName: "Lavander Fields",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "South Africa",
     province: "Franschhoek",
@@ -76,7 +76,7 @@ const pictures = [
   {
     location: { coordinates: [-0.3587142500000482, 51.58701670440745], type: "Point" },
     picPath: "/images/london.jpeg",
-    picName: "London",
+    picName: "London Street",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "United Kingdom",
     province: "England",
@@ -85,7 +85,7 @@ const pictures = [
   {
     location: { coordinates: [-123.05402675000005, 44.61750842888611], type: "Point" },
     picPath: "/images/portland.jpg",
-    picName: "Portland",
+    picName: "Portland Views",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "USA",
     province: "Oregon",
@@ -103,25 +103,16 @@ const pictures = [
   {
     location: { coordinates: [76.72136387499995, 9.990503791515824], type: "Point" },
     picPath: "/images/rammakal.jpg",
-    picName: "Rammakal",
+    picName: "Rammakal Views",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "India",
     province: "Kerala",
     city: "Ramakkalmedu",
   },
   {
-    location: { coordinates: [-116.98957362500005, 32.94836284814859], type: "Point" },
-    picPath: "/images/sanDiego.jpeg",
-    picName: "San Diego",
-    creatorId: "5ddd7d374dc60040fa79f29a",
-    country: "USA",
-    province: "California",
-    city: "San Diego",
-  },
-  {
     location: { coordinates: [128.66472324999995, 35.84860488417732], type: "Point" },
     picPath: "/images/southKorea.jpeg",
-    picName: "South Korea",
+    picName: "Busan Views",
     creatorId: "5ddd7d374dc60040fa79f29a",
     country: "South Korea",
     province: "South Korea",
