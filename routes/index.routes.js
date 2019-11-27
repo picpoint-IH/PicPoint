@@ -21,7 +21,10 @@ router.get('/main', (req, res) => {
     .catch(err => next(err))
 })
 
-router.get('/api', (req, res, next) => {res.status(200).json({post: auxPost})
+router.get('/api', (req, res, next) => {
+      res.status(200).json({
+        post: auxPost
+      })
 });
 
 module.exports = router;
