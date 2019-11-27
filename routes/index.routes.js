@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const fetch = require('node-fetch');
-// global.fetch = fetch;
-
+const Post = require("../models/Post.models")
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -13,12 +11,16 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/main', (req, res) => {
-  res.render('main')
+  Post.find()
+    .populate('creatorId')
+    .then(allPosts => res.render('main', {
+      post: allPosts
+    }));
 })
 
 router.get('/api', (req, res, next) => {
   Post.find()
-    .populate('creatorId')
+    .populate()
     .then(placesFromDB => res.status(200).json({
       post: placesFromDB
     }))
