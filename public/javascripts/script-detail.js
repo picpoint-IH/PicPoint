@@ -1,21 +1,23 @@
 function getAllplacesFromTheAPI(myMap) {
   axios.get("/post/api")
-    .then(response => postspoint(response.data.post, myMap))
+    .then(response => postspoint([response.data], myMap))
     .catch(error => console.log(error))
 }
 
+
 function postspoint(post, myMap) {
-  post.forEach(elm => {
-    const center = {
-      lat: elm.location.coordinates[1],
-      lng: elm.location.coordinates[0]
-    }
-    new google.maps.Marker({
-      position: center,
-      map: myMap,
-      title: elm.picName
-    });
-  })
+  const center = {
+    lat: post[0].location.coordinates[1],
+    lng: post[0].location.coordinates[0]
+  }
+
+  new google.maps.Marker({
+    position: center,
+    map: myMap,
+    title: elm.picName
+  });
+
+  myMap.zoom = 10
 }
 
 function initMap() {
@@ -27,4 +29,5 @@ function initMap() {
     }
   })
   getAllplacesFromTheAPI(myMap)
+  console.log(myMap)
 }

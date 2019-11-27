@@ -5,10 +5,9 @@
         <div class="row  main-post justify-content-center ">
             {{#each post}}
             <div class="col-3 ">
-                <img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt="">
+                <a href="/post/details/{{this.id}}"><img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt=""></a>
             </div>
             {{/each}}
-
         </div>
         <div class="row justify-content-center ">
             <div>
@@ -19,7 +18,5 @@
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
             </div>
         </div>
-
     </div>
-
 </body>

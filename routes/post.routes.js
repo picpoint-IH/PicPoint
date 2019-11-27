@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User.models')
 const Post = require('../models/Post.models')
-const multer = require('multer')
 const uploadCloud = require('../configs/cloudinary');
 const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
 
@@ -38,18 +36,19 @@ router.post('/new', uploadCloud.single('picPath'), (req, res) => {
         .catch(err => 'error: ' + err)
 })
 
-let post
+let auxPost
 
 router.get('/details/:id', (req, res) => {
     Post.findById(req.params.id)
+        .populate('User')
         .then(thePost => {
-            post = thePost
-            res.render('Post/detailPost', {post})
+            auxPost = thePost
+            res.render('Post/detailPost', auxPost)
     })
         .catch(err => console.log("Error consultando la BBDD", err))
 })
 
-router.get('/api', (req, res, next) => {res.status(200).json({post: post})
+router.get('/api', (req, res, next) => {res.status(200).json(auxPost)
 });
 
 module.exports = router;
