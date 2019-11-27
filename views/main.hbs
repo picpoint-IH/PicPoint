@@ -1,12 +1,16 @@
 <body class="colorBackground">
+
     <div class="container">
         <hr>
-        <div class="row justify-content-end">
-            <div class="col-12 main-post">
-                {{#each post}}
+        <div class="row  main-post justify-content-center ">
+            {{#each post}}
+            <div class="col-3 ">
                 <img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt="">
-                {{/each}}
             </div>
+            {{/each}}
+
+        </div>
+        <div class="row justify-content-center ">
             <div>
                 <figure id="map"></figure>
                 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -15,7 +19,6 @@
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
             </div>
         </div>
-
 
     </div>
 

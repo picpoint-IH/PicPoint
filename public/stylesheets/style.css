@@ -7,6 +7,7 @@ a {
   width: 100%;
 }
 .worldMap {
+  background: url('/images/try2.jpg') no-repeat center center fixed;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -25,7 +26,7 @@ a {
 #map {
 /* margin-top: 10px; */
  height: 400px;
- width: 60vw;
+ width: 68.8vw;
 margin:auto;
 }
 
@@ -44,7 +45,7 @@ margin:auto;
   border-radius: 50%;
   overflow: hidden;
   text-align: center;
-  box-shadow:  5px 5px 50px 5px rgb(235, 140, 51);
+  box-shadow:  5px 5px 50px 5px rgb(245, 191, 111);
 }
 
 .account-message {
@@ -92,4 +93,8 @@ margin:auto;
 
 .colorBackground {
   background: url('/images/white.jpg') no-repeat center center fixed;
+}
+
+.styleTry {
+  margin: auto;
 }
