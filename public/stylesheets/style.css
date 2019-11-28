@@ -1,4 +1,3 @@
-
 .worldMap {
   background: url('/images/try2.jpg') no-repeat center center fixed;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -8,14 +7,11 @@
   background-size: cover;
 }
 
-
-
 .form-control {
     height: 40px;
     box-shadow: none;
     color: #969fa4;
   }
-
 
 .signup-form {
   width: 400px;
@@ -140,8 +136,6 @@ margin-top: 20px;
   box-shadow:  5px 5px 50px 5px rgb(245, 191, 111);
 }
 
-
-
 #box img {
   height: 100%;
   animation: spin 35s linear infinite;
@@ -196,17 +190,16 @@ max-height:100%;
 }
 .polaroid {
   background-color: white;
-  
 }
 
 .main-post img {
-  margin: 5px;
   width: 200px;
   height: 200px;
-
+  margin:5px auto;
+  display: block;
+  
   object-fit: cover
 }
-
 
 .colorBackground {
   background: url('/images/white.jpg') no-repeat center center fixed;
@@ -231,6 +224,8 @@ max-height:100%;
 
 .profile-box img{
   width: 140px;
+  margin:5px auto;
+  display: block;
 }
 
 .profile-box h4{
@@ -246,4 +241,6 @@ max-height:100%;
 
 .detail-box img {
   width: 140px;
+  margin:5px auto;
+  display: block;
 }
