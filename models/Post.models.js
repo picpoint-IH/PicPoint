@@ -14,7 +14,6 @@ const postSchema = Schema({
     country: String,
     province: String,
     city: String,
-
     location: { type: { type: String }, coordinates: [Number] }
 }, {
     timestamps: true
