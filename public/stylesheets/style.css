@@ -168,18 +168,45 @@ margin-top: 20px;
 .profile-post img {
   width: 200px;
   margin: 5px;
+  max-width:100%;
+max-height:100%;
 }
 .main-post {
   overflow: scroll;
   height: 420px;
 }
 
+.imgSize {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.asd {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    margin-top: 10px;
+    height: auto;
+    padding: 10px 10px 30px 10px;
+    box-shadow: 7px 7px 15px 0px rgba(214,205,191,1);
+    
+}
+.polaroid {
+  background-color: white;
+  
+}
+
 .main-post img {
   margin: 5px;
-  width: 250px;
+  width: 200px;
   height: 200px;
-  object-fit: contain
+
+  object-fit: cover
 }
+
 
 .colorBackground {
   background: url('/images/white.jpg') no-repeat center center fixed;
