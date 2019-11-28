@@ -20,7 +20,6 @@ function setMapa(coords) {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(coords.lat, coords.lng),
-
     });
 
     marker = new google.maps.Marker({
@@ -36,7 +35,6 @@ function setMapa(coords) {
         document.getElementById("lng").value = this.getPosition().lng()
 
         let latlng = new google.maps.LatLng(this.getPosition().lat(), this.getPosition().lng());
-        //console.log(geocoder)
         geocoder.geocode({
             'latLng': latlng
         }, function (results, status) {
@@ -53,7 +51,6 @@ function setMapa(coords) {
             }
         });
     });
-
 }
 
 function toggleBounce() {

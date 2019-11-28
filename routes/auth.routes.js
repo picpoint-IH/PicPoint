@@ -49,11 +49,13 @@ router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
 });
 });
 
-router.get('/edit', (req, res, next) => {
-  res.render('authentication/upload')
-});
+router.get('/edit/:id', ensureLoggedIn('/auth/login'), (req, res) => {
+  User.findById(req.params.id)
+    .then(user => res.render('auth/edit', user))
+    .catch(err => console.log("Error consultando la BBDD", err))
+})
 
-router.post('/edit', uploadCloud.single('imgFile'), (req, res, next) => {
+router.post('/edit/:id', uploadCloud.single('imgFile'), (req, res, next) => {
   const path = req.file.url
   User.findByIdAndUpdate(req.user._id, {
       path
@@ -65,3 +67,26 @@ router.post('/edit', uploadCloud.single('imgFile'), (req, res, next) => {
 router.get('/api', (req, res, next) => {res.status(200).json({post: auxPost})});
 
 module.exports = router;
+
+
+
+router.post('/:id/edit', (req, res) => {
+  const {
+    name,
+    description,
+    inversions,
+    length,
+    active,
+  } = req.body
+  Coaster.findByIdAndUpdate(req.params.id, {
+      name,
+      description,
+      inversions,
+      length,
+      active,
+    })
+    .then(() => {
+      res.redirect('/coasters')
+    })
+    .catch(err => console.log('Error consultando la BBDD', err))
+})

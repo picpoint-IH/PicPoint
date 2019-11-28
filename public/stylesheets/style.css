@@ -186,6 +186,24 @@ margin-top: 20px;
   margin: auto;
 }
 
-.prueba {
-  margin: auto
+.detail-view {
+  width: 600px;
+  height: 360px;
+  object-fit: contain
+}
+
+.profile-box{
+  position:absolute;
+  top:100px;
+  left:7px;
+  width: 170px
+}
+
+.profile-box img{
+  margin: 5px;
+  height: 170px;
+}
+
+.profile-box h4{
+  text-align: center
 }

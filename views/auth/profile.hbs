@@ -1,35 +1,26 @@
 <body class="colorBackground">
+
     <div class="container">
-        <div class="row">
-
-            <div class="col-10">
-
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
+        <div class="row justify-content-center profile-box">
             {{#with user}}
-            <div class="col-2">
+            <div class="col-12">
+                <img src="{{this.path}}" alt="">
                 <h4>{{this.username}}</h4>
-                <img src="{{this.path}}" alt="" style="width: 100%">
                 <h4>About me</h4>
                 <p>{{this.aboutMe}}</p>
+                <a href="/auth/edit/{{this.id}}">Edit</a>
             </div>
             {{/with}}
-            <div class="row  main-post justify-content-center ">
-                {{!-- <div class="col-10 profile-post"> --}}
+        </div>
+            <div class="row  main-post justify-content-center">
                 {{#each post}}
-                <div class="col-3 ">
+                <div class="col-3">
                     <a href="/post/detail/{{this.id}}"><img class="img-fluid img-thumbnail" src="{{this.picPath}}"
                             alt=""></a>
                 </div>
                 {{/each}}
             </div>
-
-        </div>
-        <div class="row">
-
+        <div class="row justify-content-center">
             <figure id="map"></figure>
             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
             <script src="/javascripts/script.js"></script>
