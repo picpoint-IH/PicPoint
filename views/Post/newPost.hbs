@@ -3,7 +3,7 @@
     <div class="row">
 
         <div class="col-md-6">
-            <h1 style="font-weight: 100">Nuevo Post</h1>
+            <h1 style="font-weight: 100">New Post</h1>
             <hr>
         </div>
 
@@ -11,14 +11,14 @@
 
             <form action="/post/new" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="name-input2">Nombre de la imagen: </label>
+                    <label for="name-input2">Pic Name: </label>
                     <input name="picName" type="text" class="form-control" id="name-input2">
                 </div>
                 <div class="form-group">
-                    <label for='input1'>Foto:</label>
+                    <label for='input1'>Photo:</label>
                     <input name='picPath' type='file' id='input1'></div>
                 <div class="form-group">
-                    <label for="field3">Localización</label>
+                    <label for="field3">Location</label>
                     <input id="lat" type="text" name="longitude" placeholder="latitude">
                     <input id="lng" type="text" name="latitude" placeholder="longitude">
                 </div>
@@ -27,8 +27,8 @@
                     <input id="city" type="text" name="city" placeholder="City">
                 </div>
                 <br>
-                <button type="submit" class="btn btn-dark">Crear un post</button>
-                <a href="/main" class="btn btn-dark">Volver</a>
+                <button type="submit" class="btn btn-dark">Create a Post</button>
+                <a href="/main" class="btn btn-dark">back</a>
 
             </form>
         </div>

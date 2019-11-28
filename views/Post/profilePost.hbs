@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Edit Photo</h1>
+  <h2>Photo Details</h2>
+  <h5><b>Title:</b> {{this.picName}}</h5>
+  <h5><b>Author:</b> {{this.creatorId.username}}</h5>
+
+  <a href="/post/profile/edit/{{this.id}}" class="btn botones btn-lg btn-block">Edit post</a>
+
+
+  <a href="/post/profile/delete/{{this.id}}" class="btn botones btn-lg btn-block">Delete post</a>
+
+
+  <div class="row justify-content-end">
+    <div>
+      <img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt="">
+    </div>
+  </div>
+  {{!-- <h5>{{this.city}}, {{this.province}}, {{this.country}}</h5>
+    <hr> --}}
+  <div class="row justify-content-center">
+    <div>
+      <figure id="map"></figure>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="/javascripts/script-detail.js"></script>
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+    </div>
+  </div>
+</div>
