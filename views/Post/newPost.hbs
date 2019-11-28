@@ -1,23 +1,17 @@
 <div class="container">
-
-    <div class="row">
-
-        <div class="col-md-6">
-            <h1 style="font-weight: 100">New Post</h1>
-            <hr>
+    <div class="row signup-form">
+        <div class="col-md-6 ">
         </div>
 
-        <div class="col-md-6">
-            <form action="/post/new" method="POST" enctype="multipart/form-data">
+        <form action="/post/new" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <h2>New Post</h2>
+                <label for="name-input2">Pic Name: </label>
+                <input name="picName" type="text" class="form-control" id="name-input2">
+            </div>
+            <div class="form-group">
+                <input name='picPath' type='file' id='input1'>
                 <div class="form-group">
-                    <label for="name-input2">Pic Name: </label>
-                    <input name="picName" type="text" class="form-control" id="name-input2">
-                </div>
-                <div class="form-group">
-                    <label for='input1'>Photo:</label>
-                    <input name='picPath' type='file' id='input1'></div>
-                <div class="form-group">
-                    <label for="field3">Location</label>
                     <input id="lat" type="text" name="longitude" placeholder="latitude">
                     <input id="lng" type="text" name="latitude" placeholder="longitude">
                 </div>
@@ -26,46 +20,17 @@
                     <input id="city" type="text" name="city" placeholder="City">
                 </div>
                 <br>
-                <button type="submit" class="btn btn-dark">Create a Post</button>
-                <a href="/main" class="btn btn-dark">back</a>
-
-            </form>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div>
-            <figure id="map"></figure>
-            <script src="/javascripts/script2.js"></script>
-            <script
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
-        </div>
+                <button type="submit" class="bigBtn botones btn-block">Create a Post</button>
+                <br>
+                <a href="/main" class="bigBtn botones btn-block" style="color: white; text-align:center">Back</a>
+        </form>
     </div>
 </div>
-
-
-<div class="signup-form">
-    <form action="/auth/login" method="post">
-        <h2>New Post</h2>
-        <div class="form-group">
-            <div class="row">
-
-                <form action="/auth/login" method="post">
-                    <div class="form-group">
-                        <label for="username"></label>
-                        <input type="text" name="username" class="form-control" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="password"></label>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="bigBtn botones">Log in</button>
-                    </div>
-
-                    <p class="account-message">
-                        Don't have an account yet?
-                        <a href="/auth/signup">Signup</a>
-                    </p>
-                    {{ message }}
-                </form>
-                </body>
+<div class="row justify-content-center">
+    <div>
+        <figure id="map"></figure>
+        <script src="/javascripts/script2.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+    </div>
+</div>
