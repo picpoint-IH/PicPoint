@@ -8,7 +8,6 @@
         </div>
 
         <div class="col-md-6">
-
             <form action="/post/new" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name-input2">Pic Name: </label>
@@ -39,5 +38,34 @@
             <script src="/javascripts/script2.js"></script>
             <script
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
-        </div
+        </div>
+    </div>
 </div>
+
+
+<div class="signup-form">
+    <form action="/auth/login" method="post">
+        <h2>New Post</h2>
+        <div class="form-group">
+            <div class="row">
+
+                <form action="/auth/login" method="post">
+                    <div class="form-group">
+                        <label for="username"></label>
+                        <input type="text" name="username" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="bigBtn botones">Log in</button>
+                    </div>
+
+                    <p class="account-message">
+                        Don't have an account yet?
+                        <a href="/auth/signup">Signup</a>
+                    </p>
+                    {{ message }}
+                </form>
+                </body>
