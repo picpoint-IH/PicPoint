@@ -53,20 +53,50 @@ router.get('/api', (req, res, next) => {
 });
 
 
-router.get('/detail/:id', (req, res) => {
+router.get('/profile/:id', (req, res) => {
     Post.findById(req.params.id)
         .populate('creatorId')
         .then(thePost => {
-            res.render('Post/profileEditPost', thePost)
+            res.render('Post/profilePost', thePost)
         })
         .catch(err => console.log("Error consultando la BBDD", err))
 })
 
-router.get('/delete', (req, res) => {
-    Post.findByIdAndDelete(req.query.id)
-        .then(() => res.redirect('/auth/profile'))
+router.get('/profile/delete/:id', (req, res) => {
+    Post.findByIdAndRemove(req.params.id)
+        .then(res.redirect('/auth/profile'))
+        .catch(err => console.log('error!!', err))
+})
+
+router.get('/profile/edit/:id', (req, res) => {
+    Post.findById(req.params.id)
+        .then(thePost => res.render('Post/profileEditPost', thePost))
         .catch(err => console.log(err))
 })
+
+router.post('/profile/edit/:id', (req, res) => {
+    const { country, city, province, picName } = req.body
+    let location = {
+        type: "Point",
+        coordinates: [req.body.latitude, req.body.longitude]
+    }
+    Post.findByIdAndUpdate(req.params.id, { country, city, province, picName, location })
+        .then(() => res.redirect(`/auth/profile`))
+        .catch(err => console.log(err))
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
