@@ -1,22 +1,23 @@
 <div class="container">
-  <h1>Edit Photo</h1>
-  <h2>Photo Details</h2>
-  <h5><b>Title:</b> {{this.picName}}</h5>
-  <h5><b>Author:</b> {{this.creatorId.username}}</h5>
 
-  <a href="/post/profile/edit/{{this.id}}" class="btn botones btn-lg btn-block">Edit post</a>
+<div class="row justify-content-center detail-box">
+  <div class="col-12">
+    <img src="{{this.creatorId.path}}" alt="">
+    <h4>{{this.creatorId.username}}</h4>
+    <br>
+    <h2>My Photos</h2>
+    <h5><b>Title:</b> {{this.picName}}</h5>
+      <a href="/post/profile/edit/{{this.id}}" class="btn botones btn-lg btn-block">Edit post</a>
+      <a href="/post/profile/delete/{{this.id}}" class="btn botones btn-lg btn-block">Delete post</a>
+  </div>
+</div>
 
-
-  <a href="/post/profile/delete/{{this.id}}" class="btn botones btn-lg btn-block">Delete post</a>
-
-
-  <div class="row justify-content-end">
+  <div class="row justify-content-center">
     <div>
-      <img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt="">
+      <img class="img-fluid img-thumbnail detail-view" src="{{this.picPath}}" alt="">
     </div>
   </div>
-  {{!-- <h5>{{this.city}}, {{this.province}}, {{this.country}}</h5>
-    <hr> --}}
+
   <div class="row justify-content-center">
     <div>
       <figure id="map"></figure>

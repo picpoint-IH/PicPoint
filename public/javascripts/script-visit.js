@@ -1,5 +1,5 @@
 function getAllplacesFromTheAPI(myMap) {
-  axios.get("/api")
+  axios.get("/visit/api")
     .then(response => postspoint(response.data.post, myMap))
     .catch(error => console.log(error))
 }

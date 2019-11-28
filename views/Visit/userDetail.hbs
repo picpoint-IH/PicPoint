@@ -1,0 +1,28 @@
+<body class="colorBackground">
+
+    <div class="container">
+        <div class="row justify-content-center profile-box">
+            <div class="col-12">
+                <img src="{{post.0.creatorId.path}}" alt="">
+                <h4>{{post.0.creatorId.username}}</h4>
+                <h4>About me</h4>
+                <p>{{this.aboutMe}}</p>
+            </div>
+        </div>
+        <div class="row  main-post justify-content-center">
+            {{#each post}}
+            <div class="col-3 ">
+                <a href="/post/profile/{{this.id}}"><img class="img-fluid img-thumbnail" src="{{this.picPath}}"
+                        alt=""></a>
+            </div>
+            {{/each}}
+        </div>
+        <div class="row justify-content-center">
+            <figure id="map"></figure>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="/javascripts/script-visit.js"></script>
+            <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+        </div>
+    </div>
+</body>

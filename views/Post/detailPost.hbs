@@ -1,15 +1,22 @@
 <div class="container">
+
+<div class="row justify-content-center detail-box">
+    <div class="col-12">
     <h2>Photo Details</h2>
     <h5><b>Title:</b> {{this.picName}}</h5>
-    <h5><b>Author:</b> {{this.creatorId.username}}</h5>
+    <h5><b>Author: <a href="/visit/{{this.creatorId.id}}"></b>{{this.creatorId.username}}</h5></a>
+    <br>
+    <h5>{{this.city}}, {{this.province}}, {{this.country}}</h5>
+    </div>
+</div>
+
 
     <div class="row justify-content-center">
         <div>
             <img class="img-fluid img-thumbnail detail-view" src="{{this.picPath}}" alt="">
         </div>
     </div>
-    {{!-- <h5>{{this.city}}, {{this.province}}, {{this.country}}</h5>
-    <hr> --}}
+    
     <div class="row justify-content-center">
         <div>
             <figure id="map"></figure>

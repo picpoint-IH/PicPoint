@@ -20,10 +20,10 @@ function postspoint(post, myMap) {
 
 function initMap() {
   const myMap = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
+    zoom: 2,
     center: {
-      lat: 41.3977381,
-      lng: 2.190471916
+      lat: 30,
+      lng: 0
     }
   })
   getAllplacesFromTheAPI(myMap)
