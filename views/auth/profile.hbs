@@ -17,11 +17,16 @@
                 <p>{{this.aboutMe}}</p>
             </div>
             {{/with}}
-            <div class="col-10 profile-post">
+            <div class="row  main-post justify-content-center ">
+                {{!-- <div class="col-10 profile-post"> --}}
                 {{#each post}}
-                <img src="{{this.picPath}}" alt="">
+                <div class="col-3 ">
+                    <a href="/post/detail/{{this.id}}"><img class="img-fluid img-thumbnail" src="{{this.picPath}}"
+                            alt=""></a>
+                </div>
                 {{/each}}
             </div>
+
         </div>
         <div class="row">
 

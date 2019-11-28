@@ -1,0 +1,19 @@
+<h2>Edit Photo</h2>
+<h3>{{this.picName}}</h3>
+<h4>{{this.creatorId.username}}</h4>
+<h4>{{this.country}}</h4>
+<h4>{{this.province}}</h4>
+<h4>{{this.city}}</h4>
+<br><br>
+<img src="{{this.picPath}}" alt="">
+
+<hr>
+<div class="row ">
+  <figure id="map"></figure>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/javascripts/script-detail.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+</div>
+
+<a href="/place">Atras</a>
