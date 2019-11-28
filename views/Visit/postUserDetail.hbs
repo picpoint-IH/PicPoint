@@ -1,0 +1,29 @@
+<div class="container">
+
+    <div class="row justify-content-center detail-box">
+        <div class="col-12">
+            <img src="{{this.creatorId.path}}" alt="">
+            <h4>{{this.creatorId.username}}</h4>
+            <br>
+            <h2>Photos</h2>
+            <h5><b>Title:</b> {{this.picName}}</h5>
+            <h5>{{this.city}}, {{this.province}}, {{this.country}}</h5>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div>
+            <img class="img-fluid img-thumbnail detail-view" src="{{this.picPath}}" alt="">
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div>
+            <figure id="map"></figure>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="/javascripts/script-visit.js"></script>
+            <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+        </div>
+    </div>
+</div>

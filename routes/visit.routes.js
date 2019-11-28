@@ -10,7 +10,6 @@ const {
 
 let auxPost
 
-
 router.get('/api', (req, res, next) => {
     res.status(200).json({
         post: auxPost
@@ -33,5 +32,14 @@ router.get('/:id', ensureLoggedIn('/auth/login'), (req, res) => {
         .catch(error => console.log(error, "error find visit/:id"))
 });
 
+router.get('/profile/:id', (req, res) => {
+    Post.findById(req.params.id)
+        .populate('creatorId')
+        .then(thePost => {
+            auxPost = [thePost]
+            res.render('Visit/postUserDetail', thePost)
+        })
+        .catch(err => console.log("Error consultando la BBDD", err))
+})
 
 module.exports = router;

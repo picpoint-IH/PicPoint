@@ -52,7 +52,6 @@ router.get('/api', (req, res, next) => {
     res.status(200).json(auxPost)
 });
 
-
 router.get('/profile/:id', (req, res) => {
     Post.findById(req.params.id)
         .populate('creatorId')
