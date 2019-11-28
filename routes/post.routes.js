@@ -57,6 +57,7 @@ router.get('/profile/:id', (req, res) => {
     Post.findById(req.params.id)
         .populate('creatorId')
         .then(thePost => {
+            auxPost = thePost
             res.render('Post/profilePost', thePost)
         })
         .catch(err => console.log("Error consultando la BBDD", err))
@@ -84,20 +85,5 @@ router.post('/profile/edit/:id', (req, res) => {
         .then(() => res.redirect(`/auth/profile`))
         .catch(err => console.log(err))
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;

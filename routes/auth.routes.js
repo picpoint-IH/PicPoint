@@ -46,7 +46,8 @@ router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
     auxPost = allPosts
     res.render('auth/profile', {
     user: req.user, post: auxPost})
-});
+})
+.catch(error => console.log(error))
 });
 
 router.get('/edit/:id', ensureLoggedIn('/auth/login'), (req, res) => {
