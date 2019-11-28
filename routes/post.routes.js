@@ -40,7 +40,7 @@ let auxPost
 
 router.get('/details/:id', (req, res) => {
     Post.findById(req.params.id)
-        .populate('User')
+        .populate('creatorId')
         .then(thePost => {
             auxPost = thePost
             res.render('Post/detailPost', auxPost)

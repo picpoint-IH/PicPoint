@@ -1,19 +1,22 @@
-<h2>Photo Details</h2>
-<h3>{{this.picName}}</h3>
-<h4>{{this.User.username}}</h4>
-<h4>{{this.country}}</h4>
-<h4>{{this.province}}</h4>
-<h4>{{this.city}}</h4>
-<br><br>
-<img src="{{this.picPath}}" alt="">
+<div class="container">
+    <h2>Photo Details</h2>
+    <h5><b>Title:</b> {{this.picName}}</h5>
+    <h5><b>Author:</b> {{this.creatorId.username}}</h5>
 
-<hr>
-<div class="row ">
-    <figure id="map"></figure>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/javascripts/script-detail.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+    <div class="row justify-content-end">
+        <div>
+            <img class="img-fluid img-thumbnail" src="{{this.picPath}}" alt="">
+        </div>
+    </div>
+    {{!-- <h5>{{this.city}}, {{this.province}}, {{this.country}}</h5>
+    <hr> --}}
+    <div class="row justify-content-center">
+        <div>
+            <figure id="map"></figure>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="/javascripts/script-detail.js"></script>
+            <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+        </div>
+    </div>
 </div>
-
-<a href="/place">Atras</a>
