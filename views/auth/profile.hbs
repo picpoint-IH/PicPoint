@@ -1,12 +1,9 @@
 <body class="colorBackground">
     <div class="container">
         <div class="row">
-            <div class="col-2">
-                <h1 style="font-weight: 100">Profile</h1>
-                <hr>
-            </div>
+
             <div class="col-10">
-                <h1><br></h1>
+
                 <hr>
             </div>
         </div>
@@ -14,8 +11,8 @@
         <div class="row">
             {{#with user}}
             <div class="col-2">
-                <img src="{{this.path}}" alt="" style="width: 100%">
                 <h4>{{this.username}}</h4>
+                <img src="{{this.path}}" alt="" style="width: 100%">
                 <h4>About me</h4>
                 <p>{{this.aboutMe}}</p>
             </div>
@@ -27,8 +24,7 @@
             </div>
         </div>
         <div class="row">
-            <h1>Locations</h1>
-            <hr>
+
             <figure id="map"></figure>
             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
             <script src="/javascripts/script.js"></script>

@@ -51,4 +51,10 @@ router.get('/details/:id', (req, res) => {
 router.get('/api', (req, res, next) => {res.status(200).json(auxPost)
 });
 
+router.get('/delete', (req, res) => {
+    Post.findByIdAndDelete(req.query.id)
+        .then(() => res.redirect('/auth/profile'))
+        .catch(err => console.log(err))
+})
+
 module.exports = router;

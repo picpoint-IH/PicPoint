@@ -4,68 +4,30 @@
 
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 centered-form">
-      <form action="/auth/login" method="post">
-        <div class="form-group">
-          <label for="username">Email</label>
-          <input type="text" name="username" class="form-control" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" name="password" class="form-control" placeholder="Password">
-          <br>
-          {{#if message }}
-          <div class="error-message">{{ message }}</div>
-          {{/if}}
-        </div>
-        <button type="submit">Login</button>
-        <br><br>
-        <p class="account-message">
-          Don't have an account yet?
-          <a href="/auth/signup">Signup</a>
-        </p>
-      </form>
-    </div>
-  </div>
-</div>
-<script src="/javascripts/script.js"></script>
-</body>
-
-</html>
-
 <body class="colorBackground">
   <div class="signup-form">
     <form action="/auth/login" method="post">
       <h2>Log in</h2>
       <div class="form-group">
         <div class="row">
-          {{ message }}
-          <div class="col-xs-6"></div>
-          <div class="form-group">
-            <label for="username"></label>
-            <input type="text" name="username" class="form-control" placeholder="Name">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email"></label>
-          <input type="text" name="email" class="form-control" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="password"></label>
-          <input type="password" name="password" class="form-control" placeholder="Password">
-          <br>
-          {{#if message }}
-          <div class="error-message">{{ message }}</div>
-          {{/if}}
-          <label for='img'>Image</label>
-          <input name='imgFile' type='file' id='input1'>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn botones btn-lg btn-block">Signup</button>
-        </div>
-    </form>
-    <div class="text-center">Already have an account? <a href="/auth/login">Login</a></div>
-  </div>
+
+          <form action="/auth/login" method="post">
+            <div class="form-group">
+              <label for="username"></label>
+              <input type="text" name="username" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="password"></label>
+              <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn botones btn-lg btn-block">Log in</button>
+            </div>
+
+            <p class="account-message">
+              Don't have an account yet?
+              <a href="/auth/signup">Signup</a>
+            </p>
+            {{ message }}
+          </form>
 </body>

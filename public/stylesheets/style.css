@@ -73,12 +73,12 @@
   }
 
   .signup-form .row div:first-child {
-    padding-right: 10px;
+    padding-right: 15px;
   }
 
-  .signup-form .row div:last-child {
+  /* .signup-form .row div:last-child {
     padding-left: 10px;
-  }
+  } */
 
   .signup-form a {
     color: #fff;
