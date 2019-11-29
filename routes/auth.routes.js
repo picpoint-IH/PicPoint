@@ -3,7 +3,7 @@ const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User.models");
 const Post = require("../models/Post.models")
-const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
+const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 const uploadCloud = require('../configs/cloudinary.js');
 
 router.get("/login", (req, res) => {
@@ -40,13 +40,14 @@ router.get("/logout", ensureLoggedIn('/auth/login'), (req, res) => {
 let auxPost
 
 router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
-  Post.find({creatorId: req.user._id})
-  .then(allPosts => {
-    auxPost = allPosts
-    res.render('auth/profile', {
-    user: req.user, post: auxPost})
-})
-.catch(error => console.log(error))
+  Post.find({ creatorId: req.user._id })
+    .then(allPosts => {
+      auxPost = allPosts
+      res.render('auth/profile', {
+        user: req.user, post: auxPost
+      })
+    })
+    .catch(error => console.log(error))
 });
 
 router.get('/edit/:id', ensureLoggedIn('/auth/login'), (req, res) => {
@@ -56,30 +57,30 @@ router.get('/edit/:id', ensureLoggedIn('/auth/login'), (req, res) => {
 })
 
 router.post('/edit/:id', uploadCloud.single('path'), (req, res) => {
-  const {username,
+  const { username,
     email,
-    aboutMe} = req.body
-    if (req.file){
-      const path = req.file.url
-      User.findByIdAndUpdate(req.user.id, {
-          username,
-          email,
-          aboutMe,
-          path
-        })
-        .then(us => res.redirect('/auth/profile'))
-        .catch(error => console.log(error))
-    }else{
-      User.findByIdAndUpdate(req.user.id, {
-          username,
-          email,
-          aboutMe,
-        })
-        .then(us => res.redirect('/auth/profile'))
-        .catch(error => console.log(error))
-    }
+    aboutMe } = req.body
+  if (req.file) {
+    const path = req.file.url
+    User.findByIdAndUpdate(req.user.id, {
+      username,
+      email,
+      aboutMe,
+      path
+    })
+      .then(us => res.redirect('/auth/profile'))
+      .catch(error => console.log(error))
+  } else {
+    User.findByIdAndUpdate(req.user.id, {
+      username,
+      email,
+      aboutMe,
+    })
+      .then(us => res.redirect('/auth/profile'))
+      .catch(error => console.log(error))
+  }
 });
 
-router.get('/api', (req, res, next) => {res.status(200).json({post: auxPost})});
+router.get('/api', (req, res, next) => { res.status(200).json({ post: auxPost }) });
 
 module.exports = router;
