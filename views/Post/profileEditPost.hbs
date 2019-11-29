@@ -1,40 +1,35 @@
 <div class="container">
-
   <div class="row">
+    <div class="signup-form overRide">
 
-    <div class="col-md-6">
-      <h1 style="font-weight: 100">Edit Post</h1>
-      <hr>
-    </div>
-    <div class="row">
-    </div>
-    <div class="col-md-6">
-
-      <form action="/post/profile/edit/{{this.id}}" method="POST">
-        <div class="form-group">
-          <label for="name-input2">Pic Name: </label>
-          <input name="picName" type="text" class="form-control" id="name-input2" value='{{this.picName}}'>
+      <div class="form-group">
+        <div class="row">
+          <form action="/post/profile/edit/{{this.id}}" method="POST">
+            <h2>Edit Post</h2>
+            <div class="form-group">
+              <label for="name-input2">Pic Name: </label>
+              <input name="picName" type="text" class="form-control" id="name-input2" value='{{this.picName}}'>
+            </div>
+            <div class="form-group">
+              <label for="field3">Location</label>
+              <input id="lat" type="text" name="longitude" value='{{this.location.coordinates.[1]}}'>
+              <input id="lng" type="text" name="latitude" value='{{this.location.coordinates.[0]}}'>
+            </div>
+            <div><input id="country" type="text" name="country" value='{{this.country}}'>
+              <input id="province" type="text" name="province" value='{{this.province}}'>
+              <input id="city" type="text" name="city" value='{{this.city}}'>
+            </div>
+            <br>
+            <div class="row d-flex justify-content-around">
+              <button type="submit" class="btn botones">Update Post</button>
+              <a href="/main" class="btn botones btn-lg btn-block" style="color: white; text-align:center">Back</a>
+            </div>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="field3">Location</label>
-          <input id="lat" type="text" name="longitude" value='{{this.location.coordinates.[1]}}'>
-          <input id="lng" type="text" name="latitude" value='{{this.location.coordinates.[0]}}'>
-        </div>
-        <div><input id="country" type="text" name="country" value='{{this.country}}'>
-          <input id="province" type="text" name="province" value='{{this.province}}'>
-          <input id="city" type="text" name="city" value='{{this.city}}'>
-        </div>
-        <br>
-        <button type="submit" class="btn botones btn-lg btn-block">Update Post</button>
-        <a href="/main" class="btn botones btn-lg btn-block">Back</a>
-
-      </form>
+      </div>
     </div>
   </div>
-
   <div class="row">
-    <h1>Locations</h1>
-    <hr>
     <figure id="map"></figure>
     <script src="/javascripts/script2.js"></script>
     <script
