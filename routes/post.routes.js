@@ -43,6 +43,7 @@ router.get('/details/:id', (req, res) => {
     Post.findById(req.params.id)
         .populate('creatorId')
         .then(thePost => {
+            postId = req.params.id
             auxPost = thePost
             res.render('Post/detailPost', auxPost)
         })
@@ -109,6 +110,28 @@ router.get('/like/:id', (req, res) => {
     })
     .then(()=> res.redirect(`/post/profile/${req.params.id}`))
     .catch(err=> console.log("Error", err))
+})
+
+router.get('/detail/like/:id', (req, res) => {
+    Like.find(({
+            'postId': postId,
+            'creatorId': req.user._id
+        }))
+        .then(result => {
+            console.log(result)
+            if (result.length == 0) {
+                Like.create({
+                        creatorId: req.user._id,
+                        postId: postId
+                    })
+                    .then(() => console.log("like creado"))
+                    .catch(err => console.log("Error ", err))
+            } else {
+                console.log("Ya le ha dado like")
+            }
+        })
+        .then(() => res.redirect(`/post/details/${postId}`))
+        .catch(err => console.log("Error", err))
 })
 
 module.exports = router;

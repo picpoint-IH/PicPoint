@@ -3,6 +3,7 @@ const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User.models");
 const Post = require("../models/Post.models")
+const Like = require('../models/Like.models')
 const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
 const uploadCloud = require('../configs/cloudinary.js');
 
@@ -43,10 +44,30 @@ router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
   Post.find({creatorId: req.user._id})
   .then(allPosts => {
     auxPost = allPosts
+    console.log(auxPost)
     res.render('auth/profile', {
     user: req.user, post: auxPost})
 })
 .catch(error => console.log(error))
+});
+
+router.get('/liked', ensureLoggedIn('/auth/login'), (req, res) => {
+  Like.find({
+      'creatorId': req.user._id
+    })
+    .populate('postId')
+    .then(allPosts => {
+      auxPost = []
+      const myLikedPost = allPosts
+      for (let i = 0; i < myLikedPost.length; i++) {
+        auxPost.push(myLikedPost[i].postId)
+      }
+      res.render('auth/profileLiked', {
+        user: req.user,
+        post: myLikedPost
+      })
+    })
+    .catch(error => console.log(error))
 });
 
 router.get('/edit/:id', ensureLoggedIn('/auth/login'), (req, res) => {
