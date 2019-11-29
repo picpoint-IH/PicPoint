@@ -3,12 +3,8 @@ const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User.models");
 const Post = require("../models/Post.models")
-<<<<<<< HEAD
-const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
-=======
 const Like = require('../models/Like.models')
 const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
->>>>>>> b7ca2a91789db05f68c70c03b8f9e77eacec2f56
 const uploadCloud = require('../configs/cloudinary.js');
 
 router.get("/login", (req, res) => {
@@ -48,7 +44,6 @@ router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
   Post.find({ creatorId: req.user._id })
     .then(allPosts => {
       auxPost = allPosts
-      console.log(auxPost)
       res.render('auth/profile', {
         user: req.user, post: auxPost
       })

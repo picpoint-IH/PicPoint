@@ -10,14 +10,12 @@
 .logo {
   height: 150px;
 }
+
 .form-control {
-    height: 40px;
-    box-shadow: none;
-    color: #969fa4;
-  }
-
-
- 
+  height: 40px;
+  box-shadow: none;
+  color: #969fa4;
+}
 
 .signup-form {
   width: 400px;
@@ -25,14 +23,13 @@
   padding: 50px 0;
 }
 
-
-
-  .signup-form h2 {
+.signup-form h2 {
   color: #636363;
   margin: 0 0 15px;
   position: relative;
   text-align: center;
 }
+
 .overRide {
 
   padding: 10px;
@@ -47,30 +44,33 @@
   padding: 30px;
 }
 
+.signup-form h2:before,
+.signup-form h2:after {
+  content: "";
+  height: 2px;
+  width: 30%;
+  background: #d4d4d4;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
 
+.signup-form h2:before {
+  left: 0;
+}
 
-.signup-form h2:before, .signup-form h2:after{
-		content: "";
-		height: 2px;
-		width: 30%;
-		background: #d4d4d4;
-		position: absolute;
-		top: 50%;
-		z-index: 2;
-	}	
-	.signup-form h2:before{
-		left: 0;
-	}
-	.signup-form h2:after{
-		right: 0;
-  }
-  
- signup-form .form-group {
+.signup-form h2:after {
+  right: 0;
+}
+
+signup-form .form-group {
   margin-bottom: 20px;
 }
+
 .signup-form input[type="checkbox"] {
   margin-top: 3px;
 }
+
 .signup-form .btn {
   font-size: 16px;
   font-weight: bold;
@@ -81,41 +81,47 @@
 .signup-form .row div:first-child {
   padding-right: 15px;
 }
+
 .signup-form a {
   color: #fff;
   text-decoration: underline;
 }
+
 .signup-form a:hover {
   text-decoration: none;
 }
- .signup-form form a {
-  color:rgb(235, 140, 51);
+
+.signup-form form a {
+  color: rgb(235, 140, 51);
   text-decoration: none;
 }
+
 .signup-form form a:hover {
   text-decoration: underline;
 }
 
 .appName {
-    font-size: 3em;
+  font-size: 3em;
 
 }
-.orange{
-  color:rgb(235, 140, 51);
+
+.orange {
+  color: rgb(235, 140, 51);
 }
+
 .samples img {
   width: 400px;
-  height:300px;
+  height: 300px;
 }
 
 #map {
-margin-top: 20px;
- height: 250px;
- width: 68.8vw;
+  margin-top: 20px;
+  height: 250px;
+  width: 68.8vw;
 
 }
 
-.smallButton{
+.smallButton {
   border: 1px solid rgb(180, 117, 62);
   color: white;
   background-color: rgb(235, 140, 51);
@@ -130,20 +136,21 @@ margin-top: 20px;
 }
 
 
-.botonera{
-    margin: 200px 0px 0px 0px;
-    position: absolute;
-    width:400px;
+.botonera {
+  margin: 200px 0px 0px 0px;
+  position: absolute;
+  width: 400px;
 }
-.btn{
-    width: 150px;
-    border-radius: 5px;
+
+.btn {
+  width: 150px;
+  border-radius: 5px;
 }
 
 
-.bigBtn{
-    width: 200px;
-    border-radius: 5px;
+.bigBtn {
+  width: 200px;
+  border-radius: 5px;
 }
 
 #box {
@@ -152,7 +159,7 @@ margin-top: 20px;
   border-radius: 50%;
   overflow: hidden;
   text-align: center;
-  box-shadow:  5px 5px 50px 5px rgb(245, 191, 111);
+  box-shadow: 5px 5px 50px 5px rgb(245, 191, 111);
 }
 
 #box img {
@@ -164,12 +171,13 @@ margin-top: 20px;
   0% {
     margin-left: -400px;
   }
+
   100% {
     margin-left: 0px;
   }
 }
 
-.account-message{
+.account-message {
   color: black;
 }
 
@@ -181,9 +189,10 @@ margin-top: 20px;
 .profile-post img {
   width: 200px;
   margin: 5px;
-  max-width:100%;
-max-height:100%;
+  max-width: 100%;
+  max-height: 100%;
 }
+
 .main-post {
   overflow: scroll;
   height: 420px;
@@ -196,17 +205,18 @@ max-height:100%;
 }
 
 .polaroidEffect {
-    padding: .25rem;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: .25rem;
-    max-width: 100%;
-    margin-top: 10px;
-    height: auto;
-    padding: 10px 10px 30px 10px;
-    box-shadow: 7px 7px 15px 0px rgba(214,205,191,1);
-    
+  padding: .25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  max-width: 100%;
+  margin-top: 10px;
+  height: auto;
+  padding: 10px 10px 30px 10px;
+  box-shadow: 7px 7px 15px 0px rgba(214, 205, 191, 1);
+
 }
+
 .polaroid {
   background-color: white;
 }
@@ -214,9 +224,9 @@ max-height:100%;
 .main-post img {
   width: 200px;
   height: 200px;
-  margin:5px auto;
+  margin: 5px auto;
   display: block;
-  
+
   object-fit: cover
 }
 
@@ -234,33 +244,33 @@ max-height:100%;
   object-fit: contain
 }
 
-.profile-box{
-  position:absolute;
-  top:100px;
-  left:7px;
+.profile-box {
+  position: absolute;
+  top: 100px;
+  left: 7px;
   width: 170px
 }
 
-.profile-box img{
+.profile-box img {
   width: 140px;
-  margin:5px auto;
+  margin: 5px auto;
   display: block;
 }
 
-.profile-box h4{
+.profile-box h4 {
   text-align: center;
 }
 
 .detail-box {
-  position:absolute;
-  top:100px;
-  left:7px;
+  position: absolute;
+  top: 100px;
+  left: 7px;
   width: 218px
 }
 
 .detail-box img {
   width: 140px;
-  margin:5px auto;
+  margin: 5px auto;
   display: block;
 }
 
@@ -273,32 +283,40 @@ max-height:100%;
 .navbar {
   background-color: #f3a257;
 }
+
 .navbar .navbar-brand {
   color: #eef3f4;
 }
+
 .navbar .navbar-brand:hover,
 .navbar .navbar-brand:focus {
   color: #000000;
 }
+
 .navbar .navbar-text {
   color: #c0c0c0;
 }
+
 .navbar .navbar-text a {
   color: #c0c0c0;
 }
+
 .navbar .navbar-text a:hover,
 .navbar .navbar-text a:focus {
-  color: #c0c0c0; 
+  color: #c0c0c0;
 }
+
 .navbar .navbar-nav .nav-link {
   color: #eef3f4;
   border-radius: .25rem;
   margin: 0 0.25em;
 }
+
 .navbar .navbar-nav .nav-link:not(.disabled):hover,
 .navbar .navbar-nav .nav-link:not(.disabled):focus {
   color: #333333;
 }
+
 .navbar .navbar-nav .nav-item.active .nav-link,
 .navbar .navbar-nav .nav-item.active .nav-link:hover,
 .navbar .navbar-nav .nav-item.active .nav-link:focus,
@@ -308,23 +326,29 @@ max-height:100%;
   color: #000000;
   background-color: #333333;
 }
+
 .navbar .navbar-toggle {
   border-color: #333333;
 }
+
 .navbar .navbar-toggle:hover,
 .navbar .navbar-toggle:focus {
   background-color: #333333;
 }
+
 .navbar .navbar-toggle .navbar-toggler-icon {
   color: #333333;
 }
+
 .navbar .navbar-collapse,
 .navbar .navbar-form {
   border-color: #333333;
 }
+
 .navbar .navbar-link {
   color: #333333;
 }
+
 .navbar .navbar-link:hover {
   color: #000000;
 }
@@ -333,10 +357,12 @@ max-height:100%;
   .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
     color: #333333;
   }
+
   .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
   .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
     color: #000000;
   }
+
   .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
     color: #000000;
     background-color: #333333;
@@ -347,10 +373,12 @@ max-height:100%;
   .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
     color: #333333;
   }
+
   .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
   .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
     color: #000000;
   }
+
   .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
     color: #000000;
     background-color: #333333;
@@ -361,10 +389,12 @@ max-height:100%;
   .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
     color: #333333;
   }
+
   .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
   .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
     color: #000000;
   }
+
   .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
     color: #000000;
     background-color: #333333;
@@ -375,10 +405,12 @@ max-height:100%;
   .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
     color: #333333;
   }
+
   .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
   .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
     color: #000000;
   }
+
   .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
     color: #000000;
     background-color: #333333;
@@ -388,16 +420,18 @@ max-height:100%;
 .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
   color: #c0c0c0;
 }
+
 .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
 .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
   color: #000000;
 }
+
 .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
   color: #000000;
   background-color: #c0c0c0;
 }
 
 .colorChange {
-  color:white;
+  color: white;
   border-color: white;
 }
