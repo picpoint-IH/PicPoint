@@ -4,7 +4,7 @@ const router = express.Router();
 const User = require("../models/User.models");
 const Post = require("../models/Post.models")
 const Like = require('../models/Like.models')
-const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
 const uploadCloud = require('../configs/cloudinary.js');
 
 router.get("/login", (req, res) => {
@@ -44,7 +44,6 @@ router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
   Post.find({ creatorId: req.user._id })
     .then(allPosts => {
       auxPost = allPosts
-      console.log(auxPost)
       res.render('auth/profile', {
         user: req.user, post: auxPost
       })

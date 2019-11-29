@@ -71,10 +71,14 @@ router.get('/like/api', (req, res, next) => {
     .catch(err => console.log("Ni uno solo ", err))});
 
 router.get('/profile/delete/:id', (req, res) => {
-    Post.findByIdAndRemove(req.params.id)
-        .then(res.redirect('/auth/profile'))
+    const deleteId = req.params.id
+    Post.findByIdAndRemove(deleteId)
+        .then(() => Like.deleteMany({'postId': deleteId}))
+        .then(() => res.redirect('/auth/profile'))
         .catch(err => console.log('error!!', err))
 })
+
+
 
 router.get('/profile/edit/:id', (req, res) => {
     Post.findById(req.params.id)
@@ -96,16 +100,12 @@ router.post('/profile/edit/:id', (req, res) => {
 router.get('/like/:id', (req, res) => {
     Like.find(({'postId': postId, 'creatorId': req.user._id}))
     .then(result => {
-        console.log(result)
         if(result.length == 0){
             Like.create({
                 creatorId: req.user._id,
                 postId: postId
             })
-            .then(()=> console.log("like creado"))
             .catch(err => console.log("Error ", err))
-        }else{
-            console.log("Ya le ha dado like")
         }
     })
     .then(()=> res.redirect(`/post/profile/${req.params.id}`))
@@ -118,7 +118,6 @@ router.get('/detail/like/:id', (req, res) => {
             'creatorId': req.user._id
         }))
         .then(result => {
-            console.log(result)
             if (result.length == 0) {
                 Like.create({
                         creatorId: req.user._id,
@@ -126,8 +125,6 @@ router.get('/detail/like/:id', (req, res) => {
                     })
                     .then(() => console.log("like creado"))
                     .catch(err => console.log("Error ", err))
-            } else {
-                console.log("Ya le ha dado like")
             }
         })
         .then(() => res.redirect(`/post/details/${postId}`))

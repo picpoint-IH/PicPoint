@@ -1,7 +1,5 @@
 const express = require("express");
-const passport = require('passport');
 const router = express.Router();
-const User = require("../models/User.models");
 const Post = require("../models/Post.models")
 const Like = require('../models/Like.models')
 
@@ -27,7 +25,6 @@ router.get('/like/api', (req, res, next) => {
 
 router.get('/:id', ensureLoggedIn('/auth/login'), (req, res) => {
     console.log(req.params.id)
-
 
     Post.find({
             creatorId: req.params.id
@@ -59,16 +56,12 @@ router.get('/like/:id', (req, res) => {
             'creatorId': req.user._id
         }))
         .then(result => {
-            console.log(result)
             if (result.length == 0) {
                 Like.create({
                         creatorId: req.user._id,
                         postId: postId
                     })
-                    .then(() => console.log("like creado"))
                     .catch(err => console.log("Error ", err))
-            } else {
-                console.log("Ya le ha dado like")
             }
         })
         .then(() => res.redirect(`/visit/profile/${req.params.id}`))

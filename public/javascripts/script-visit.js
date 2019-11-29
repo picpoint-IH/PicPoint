@@ -1,8 +1,6 @@
 axios.get("/visit/like/api")
   .then(response => {
-    console.log(response.data)
     document.getElementById('like').innerHTML = `${response.data.length}`
-    console.log(response.data.length)
   })
 
 function getAllplacesFromTheAPI(myMap) {
