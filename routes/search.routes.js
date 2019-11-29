@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require("../models/Post.models")
+const User = require("../models/User.models");
 
 router.get('/', (req, res, next) => {
     res.render('search')
