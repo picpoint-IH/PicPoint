@@ -4,16 +4,25 @@ function getAllplacesFromTheAPI(myMap) {
     .catch(error => console.log(error))
 }
 
+const icon = {
+  url: "/images/pointer.png",
+  scaledSize: new google.maps.Size(50, 80), // scaled size
+  origin: new google.maps.Point(0, 0), // origin
+  anchor: new google.maps.Point(0, 0) // anchor
+}
+
 function postspoint(post, myMap) {
   post.forEach(elm => {
     const center = {
       lat: elm.location.coordinates[1],
       lng: elm.location.coordinates[0]
     }
+
     new google.maps.Marker({
       position: center,
       map: myMap,
-      title: elm.picName
+      title: elm.picName,
+      icon : icon
     });
   })
 }

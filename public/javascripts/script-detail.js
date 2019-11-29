@@ -1,22 +1,22 @@
-  axios.get("/post/like/api")
-    .then(response => {
-      console.log(response.data)
-      document.getElementById('like').innerHTML = `${response.data.length}`
-      console.log(response.data.length)
-    })
-    
-    .catch(error => console.log("Es aqui ", error))
+axios.get("/post/like/api")
+  .then(response => {
+    console.log(response.data)
+    document.getElementById('like').innerHTML = `${response.data.length}`
+    console.log(response.data.length)
+  })
+
+  .catch(error => console.log("Es aqui ", error))
 
 function postspoint(post, myMap) {
   const center = {
     lat: post[0].location.coordinates[1],
     lng: post[0].location.coordinates[0]
   }
-
+  
   new google.maps.Marker({
     position: center,
     map: myMap,
-    title: elm.picName
+    title: elm.picName,
   });
 }
 
