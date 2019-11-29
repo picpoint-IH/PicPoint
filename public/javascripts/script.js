@@ -6,6 +6,7 @@ function getAllplacesFromTheAPI(myMap) {
 
 function postspoint(post, myMap) {
   post.forEach(elm => {
+    if(elm){
     const center = {
       lat: elm.location.coordinates[1],
       lng: elm.location.coordinates[0]
@@ -14,7 +15,7 @@ function postspoint(post, myMap) {
       position: center,
       map: myMap,
       title: elm.picName
-    });
+    })}
   })
 }
 
