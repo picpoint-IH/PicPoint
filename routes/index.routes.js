@@ -14,8 +14,8 @@ let auxPost
 
 router.get('/main', (req, res) => {
   Post.find()
-    .then(allPosts =>{
-    auxPost = allPosts
+    .then(post =>{
+    auxPost = post.sort(() => Math.random() - 0.5)
     res.render('main', {post: auxPost})
   })
     .catch(err => next(err))

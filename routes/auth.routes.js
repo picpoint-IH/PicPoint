@@ -26,7 +26,6 @@ router.get("/signup", ensureLoggedOut(), (req, res) => {
   });
 });
 
-
 router.post('/signup', [ensureLoggedOut(), uploadCloud.single('imgFile')], passport.authenticate('local-signup', {
   successRedirect: '/',
   failureRedirect: '/auth/signup',

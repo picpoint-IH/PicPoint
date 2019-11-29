@@ -1,3 +1,11 @@
+  axios.get("/post/like/api")
+    .then(response => {
+      document.getElementById('like').innerHTML = `${response.data.length}`
+      console.log(response.data.length)
+    })
+    
+    .catch(error => console.log("Es aqui ", error))
+
 function postspoint(post, myMap) {
   const center = {
     lat: post[0].location.coordinates[1],

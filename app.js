@@ -53,5 +53,4 @@ app.use('/post', require('./routes/post.routes'))
 app.use('/search', require('./routes/search.routes'))
 app.use('/visit', require('./routes/visit.routes'))
 
-
 module.exports = app;
